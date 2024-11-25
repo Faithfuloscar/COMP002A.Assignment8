@@ -10,8 +10,10 @@
 // immediately apply them. Make sure you also notify the user somehow that the preferences
 // were saved.
 
+// wrapped code inside a DOMcontentloaded to make sure it runs after it has fully loaded;
+document.addEventListener('DOMContentLoaded', function(){
 // function that applies the preference
-function preference() {
+function applyPreferences() {
 
     // retrieves preference from local storage
     const name = localStorage.getItem('name');
@@ -41,7 +43,7 @@ document.getElementById('preferences-form').addEventListener('submit', function 
     // gets the value from the form
     const name = document.getElementById('name').value;
     const backgroundColor = document.getElementById('background-color').value;
-    const foregroundColor = document.getElementById('foregroundColor').value;
+    const foregroundColor = document.getElementById('foreground-color').value;
 
     // local storage for values
     localStorage.setItem('name', name);
@@ -52,5 +54,8 @@ document.getElementById('preferences-form').addEventListener('submit', function 
     alert('Saved!');
 
     // applies new preferences immediately
-    preference();
+    applyPreferences();
+});
+    // applies preference on page land
+    applyPreferences();
 });
