@@ -35,4 +35,22 @@ function preference() {
 // form submission event listener
 document.getElementById('preferences-form').addEventListener('submit', function (event){
 
+    // prevents default submit action
+    event.preventDefault();
+
+    // gets the value from the form
+    const name = document.getElementById('name').value;
+    const backgroundColor = document.getElementById('background-color').value;
+    const foregroundColor = document.getElementById('foregroundColor').value;
+
+    // local storage for values
+    localStorage.setItem('name', name);
+    localStorage.setItem('backgroundColor', backgroundColor);
+    localStorage.setItem('foregroundColor', foregroundColor);
+
+    // notification that the preference is saved
+    alert('Saved!');
+
+    // applies new preferences immediately
+    preference();
 });
