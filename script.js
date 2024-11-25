@@ -9,3 +9,8 @@
 // also want to call this function again when the user saves their preferences to
 // immediately apply them. Make sure you also notify the user somehow that the preferences
 // were saved.
+
+// function that applies the preference
+function preference() {
+
+}
