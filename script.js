@@ -13,4 +13,21 @@
 // function that applies the preference
 function preference() {
 
+    // retrieves preference from local storage
+    const name = localStorage.getItem('name');
+    const backgroundColor = localStorage.getItem('backgroundColor');
+    const foregroundColor = localStorage.getItem('foregroundColor');
+
+    // applying preferences if they exist
+    if (name) {
+        document.getElementById('greeting').textContent = `Hello, ${name}!`
+    }
+
+    if (backgroundColor) {
+        document.body.style.backgroundColor = backgroundColor;
+    }
+
+    if (foregroundColor) {
+        document.body.style.color = foregroundColor;
+    }
 }
