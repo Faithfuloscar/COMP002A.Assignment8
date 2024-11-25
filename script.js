@@ -31,3 +31,8 @@ function preference() {
         document.body.style.color = foregroundColor;
     }
 }
+
+// form submission event listener
+document.getElementById('preferences-form').addEventListener('submit', function (event){
+
+});
